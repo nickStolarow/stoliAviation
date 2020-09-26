@@ -1,5 +1,5 @@
 <?php
-	$pageName = "stoliAviation";
+	$pageName = "home";
 	require_once "header.php";
 ?>
 		<div id="content">

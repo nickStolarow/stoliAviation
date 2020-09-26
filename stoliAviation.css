@@ -52,7 +52,13 @@ a {
     color: #edf2f4;
 }
 
-#login {
-    margin-left: auto;
-    margin-right: auto;
+#loginButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: 3px solid #2b2d42;
+    border-radius: 5px;
+    background-color: #8d99ae;
+    font-family: "Arial";
+    padding: 5 5;
 }
