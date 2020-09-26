@@ -7,7 +7,9 @@
 		<span id="loginButton">
 			<a href="login.php">Login/My Account</a>
 		</span>
-		<h1>STOLI AVIATION</h1>
+		<a href="index.php">
+			<img src="logo.jpg", alt="Stoli Aviation" wdith="500px" height="200px"/>
+		</a>
 		<div id="navigation">
 			<ol>
 				<li><a <?php if ($pageName == "home") {echo "class='active';";} ?> href="index.php">Home</a></li>

@@ -1,5 +1,5 @@
 body {
-    background-color: #edf2f4;
+    background-color: white
 }
 
 h1 {
@@ -17,11 +17,11 @@ h1 {
 }
 
 #navigation {
-    background-color: #8d99ae;
+    background-color: rgb(67, 158, 248);
     padding: 7 7;
     margin: 0 0;
     left: 0;
-    border: 3px solid #2b2d42;
+    border: 3px solid rgb(54, 57, 58);
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -31,11 +31,9 @@ h1 {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #8d99ae;
     color: black;
     text-align: center;
     font-size: 18px;
-    border: 2px solid #2b2d42;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -45,7 +43,7 @@ a:link, a:visited {
 }
 
 .active, a:hover{
-    color: #d80032;
+    color: rgb(231, 50, 35);
 }
 
 a {
@@ -56,9 +54,9 @@ a {
     position: absolute;
     top: 10px;
     right: 10px;
-    border: 3px solid #2b2d42;
+    border: 3px solid rgb(54, 57, 58);
     border-radius: 5px;
-    background-color: #8d99ae;
+    background-color: rgb(67, 158, 248);
     font-family: "Arial";
     padding: 5 5;
 }
