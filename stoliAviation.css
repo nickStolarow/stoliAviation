@@ -2,15 +2,9 @@ body {
     background-color: white
 }
 
-h1 {
-    font-size: 60px;
-    font-family: Arial;
-    padding-top: 20px;
-}
-
 #navigation > ol, #navigation > ol > li {
     font-size: 25;
-    font-family: 'Arial';
+    font-family: "Arial";
     list-style-type: none;
     display: inline;
     padding-left: 10px;
@@ -31,7 +25,7 @@ h1 {
     left: 0;
     bottom: 0;
     width: 100%;
-    color: black;
+    color: gray;
     text-align: center;
     font-size: 18px;
     border-radius: 5px;
@@ -42,11 +36,11 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-.active, a:hover{
-    color: rgb(231, 50, 35);
+#navlinks.active, #navlinks:hover{
+    color: rgb(54, 57, 35);
 }
 
-a {
+#navlinks {
     color: #edf2f4;
 }
 
@@ -59,4 +53,43 @@ a {
     background-color: rgb(67, 158, 248);
     font-family: "Arial";
     padding: 5 5;
+}
+
+#username, #password, #email, #firstname, #lastname, #confirmPassword {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+#signUpButton {
+    width: 80px;
+    height: 35px;
+    font-size: 20px;
+}
+
+#createAccountButton {
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#fields {
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#logo {
+    height: 200px;
+    alt: "Stoli Aviation";
+}
+
+#createAccount, #login {
+    font-size: 15px;
+    font-family: "Arial";
 }

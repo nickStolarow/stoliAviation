@@ -3,18 +3,24 @@
         <link rel="stylesheet" type="text/css" href="stoliAviation.css" />
     </head>
         <body>
-            <div>
+            <div id="fields">
+                <a href="index.php">
+                    <img id="logo" src="logo.jpg" />
+                </a>
                 <form>
-                    <div id="login">
-                        <input placeholder="Username" type="text" id="username" />
+                    <div>
+                        <input id="username" placeholder="Username" type="text" />
                     </div>
-                    <div id="login">
-                        <input placeholder="Password" type="text" id="password" />
+                    <div>
+                        <input id="password" placeholder="Password" type="password" />
                     </div>
-                    <div id="login">
-                        <input type="submit" value="Sign in" />
+                    <div>
+                        <input id="signUpButton" type="submit" value="Sign in" />
                     </div>
                 </form>
+                <h7 id="createAccount"> Dont have an account?
+                    <a id="createAccount" href="createAccount.php">Create one!</a>
+                </h7>
             </div>
         </body>
 </html>
