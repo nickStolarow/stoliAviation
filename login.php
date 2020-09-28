@@ -18,7 +18,7 @@
                         <input id="signUpButton" type="submit" value="Sign in" />
                     </div>
                 </form>
-                <h7 id="createAccount"> Dont have an account?
+                <h7 id="createAccount"> Don't have an account?
                     <a id="createAccount" href="createAccount.php">Create one!</a>
                 </h7>
             </div>

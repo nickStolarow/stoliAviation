@@ -3,7 +3,7 @@
 	require_once "header.php";
 ?>
 		<div id="content">
-
+			vvv PLACE HOLDER FOR PICTURE COLLAGE vvv
 		</div>
 	</body>
 </html>

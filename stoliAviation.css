@@ -13,8 +13,6 @@ body {
 #navigation {
     background-color: rgb(67, 158, 248);
     padding: 7 7;
-    margin: 0 0;
-    left: 0;
     border: 3px solid rgb(54, 57, 58);
     border-radius: 5px;
     box-sizing: border-box;
@@ -89,7 +87,41 @@ a:link, a:visited {
     alt: "Stoli Aviation";
 }
 
+#smallLogo {
+    height: 150px;
+    alt: "Stoli Aviation";
+}
+
 #createAccount, #login {
     font-size: 15px;
     font-family: "Arial";
+}
+
+#firstnameCheckout, #lastnameCheckout, #city, #zip, #phoneCheckout, #state {
+    font-size: 20px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-family: "Arial";
+}
+
+#address, #address2, #emailCheckout{
+    font-size: 20px;
+    font-family: "Arial";
+    width: 451px;
+    margin-top: 15px;
+}
+
+::placeholder {
+    color: black
+}
+
+#billingHeader {
+    margin: 20px 0px;
+    background-color: rgb(67, 158, 248);
+    padding: 7 7;
+    border: 3px solid rgb(54, 57, 58);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-style: "Arial";
+    font-size: 25px;
 }
