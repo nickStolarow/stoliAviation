@@ -17,5 +17,6 @@
 				<li><a id="navlinks" <?php if ($pageName == "booking") {echo "class='active';";} ?> href="booking.php">Booking</a></li>
 				<li><a id="navlinks" <?php if ($pageName == "contact") {echo "class='active';";} ?> href="contact.php">Contact</a></li>
 				<li><a id="navlinks" <?php if ($pageName == "about") {echo "class='active';";} ?> href="about.php">About</a></li>
+				<li><a id="navlinks" <?php if ($pageName == "reviews") {echo "class='active';";} ?> href="reviews.php">Reviews</a></li>
 			</ol>
 		</div>

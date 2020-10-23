@@ -7,12 +7,12 @@
                 <a href="index.php">
                     <img id="logo" src="logo.jpg" />
                 </a>
-                <form>
+                <form methoD='POST' action='loginHandler.php'>
                     <div>
-                        <input id="username" placeholder="Username" type="text" />
+                        <input id="username" name="username" placeholder="Email" type="text" />
                     </div>
                     <div>
-                        <input id="password" placeholder="Password" type="password" />
+                        <input id="password" name="password" placeholder="Password" type="password" />
                     </div>
                     <div>
                         <input id="signUpButton" type="submit" value="Sign in" />

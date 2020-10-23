@@ -7,21 +7,21 @@
                 <a href="index.php">
                     <img id="logo" src="logo.jpg" />
                 </a>
-                <form>
+                <form method='POST' action='createAccountHandler.php'>
                     <div>
-                        <input id="firstname" placeholder="First Name" type="text" />
+                        <input id="firstname" name="firstname" placeholder="First Name" type="text" />
                     </div>
                     <div>
-                        <input id="lastname" placeholder="Last Name" type="text" />
+                        <input id="lastname" name="lastname" placeholder="Last Name" type="text" />
                     </div>
                     <div>
-                        <input id="email" placeholder="Email" type="text" />
+                        <input id="email" name="email" placeholder="Email" type="text" />
                     </div>
                     <div>
-                        <input id="password" placeholder="Password" type="password" />
+                        <input id="password" name="password" placeholder="Password" type="password" />
                     </div>
                     <div>
-                        <input id="confirmPassword" placeholder="Confirm Password" type="password" />
+                        <input id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" type="password" />
                     </div>
                     <div>
                         <input id="createAccountButton" type="submit" value="Create Account" />
