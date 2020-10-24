@@ -8,27 +8,32 @@ $password = $_POST['password'];
 $confirmPassword = $_POST['confirmPassword'];
 $_SESSION['errors'] = array();
 $con = include('config.php');
+$errors = false;
 
 // Check if first and last name field is filled
 if (strlen($firstname) < 1 || strlen($firstname) > 64 || strlen($lastname) < 1 || strlen($lastname) > 64) {
     $_SESSION['errors'][] = 'Invalid name';
+    $errors = true;
 }
 
 // Check if email is valid
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) || strlen($email) < 1 || strlen($email) > 255){
     $_SESSION['errors'][] = 'Invalid email';
+    $errors = true;
 }
 
 // Check if password is valid (greater than 8 chars)
 if (strlen($password) < 8 || strlen($password) > 64) {
     $_SESSION['errors'][] = 'Password must be between 8 and 64 characters';
+    $errors = true;
 }
 // Check if password and confirm password match
 if ($password != $confirmPassword){
     $_SESSION['errors'][] = 'Passwords do not match';
+    $errors = true;
 }
 
-if (count($_SESSION['errors']) > 0){
+if ($errors){
     if ($con == 'heroku') {
         header("Location: https://thawing-peak-03178.herokuapp.com/createAccount.php");
     } else {
