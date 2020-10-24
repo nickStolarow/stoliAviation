@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stoliAviation.css" />
@@ -7,7 +10,14 @@
                 <a href="index.php">
                     <img id="logo" src="logo.jpg" />
                 </a>
-                <form methoD='POST' action='loginHandler.php'>
+                <form method='POST' action='loginHandler.php'>
+                    <?php
+                        if (isset($_SESSION['credentials'])){
+                            foreach($_SESSION['credentials'] as $message){
+                                echo "<div id='errors'> {$message} </div>";
+                            }
+                        }
+                    ?>
                     <div>
                         <input id="username" name="username" placeholder="Email" type="text" />
                     </div>

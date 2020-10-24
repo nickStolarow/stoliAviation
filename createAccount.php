@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stoliAviation.css" />
@@ -8,6 +11,13 @@
                     <img id="logo" src="logo.jpg" />
                 </a>
                 <form method='POST' action='createAccountHandler.php'>
+                    <?php
+                        if (isset($_SESSION['errors'])){
+                            foreach($_SESSION['errors'] as $message){
+                                echo "<div id='errors'> {$message} </div>";
+                            }
+                        }
+                    ?>
                     <div>
                         <input id="firstname" name="firstname" placeholder="First Name" type="text" />
                     </div>
