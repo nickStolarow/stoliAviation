@@ -56,6 +56,7 @@ if ($errors){
     } else {
         header("Location: http://localhost/stoliAviation/login.php");
     }
+    unset($_SESSION['form']);
     exit();
 }
 ?>

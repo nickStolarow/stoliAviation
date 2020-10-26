@@ -15,6 +15,7 @@ if ($validUser) {
     } else {
         header("Location: http://localhost/stoliAviation/index.php");
     }
+    unset($_SESSION['form']);
     exit();
 } else {
     $_SESSION['form'] = $_POST;
