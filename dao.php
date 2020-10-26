@@ -43,11 +43,17 @@ class Dao {
     $q->execute(); 
   }
 
-  // public function deleteComment ($id) {
-  //   $conn = $this->getConnection();
-  //   $deleteQuery = "delete from comment where comment_id = :comment_id";
-  //   $q = $conn->prepare($deleteQuery);
-  //   $q->bindParam(":comment_id", $id);
-  //   $q->execute();
-  // }
+  public function emailExists($email) {
+    $conn = $this->getConnection();
+    $emailExistsQuery = "select * from users where Email = :email";
+    $q = $conn->prepare($emailExistsQuery);
+    $q->bindParam(":email", $email);
+    $q->execute();
+
+    if ($q->fetchAll()){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

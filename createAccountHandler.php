@@ -9,6 +9,7 @@ $confirmPassword = $_POST['confirmPassword'];
 $_SESSION['errors'] = array();
 $con = include('config.php');
 $errors = false;
+$dao = new Dao();
 
 // Check if first and last name field is filled
 if (strlen($firstname) < 1 || strlen($firstname) > 64 || strlen($lastname) < 1 || strlen($lastname) > 64) {
@@ -33,6 +34,12 @@ if ($password != $confirmPassword){
     $errors = true;
 }
 
+$emailExists = $dao->emailExists($email);
+if ($emailExists){
+    $_SESSION['errors'][] = 'There is already an account associated with the email provided';
+    $errors = true;
+}
+
 if ($errors){
     if ($con == 'heroku') {
         header("Location: https://thawing-peak-03178.herokuapp.com/createAccount.php");
@@ -42,7 +49,6 @@ if ($errors){
     exit();
 } else {
     // Inserts valid user into users table
-    $dao = new Dao();
     $dao->createUser($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']);
     if ($con == 'heroku'){
         header("Location: https://thawing-peak-03178.herokuapp.com/login.php");
