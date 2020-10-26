@@ -41,6 +41,7 @@ if ($emailExists){
 }
 
 if ($errors){
+    $_SESSION['form'] = $_POST;
     if ($con == 'heroku') {
         header("Location: https://thawing-peak-03178.herokuapp.com/createAccount.php");
     } else {

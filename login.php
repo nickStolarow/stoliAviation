@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (isset($_SESSION['form'])){
+    $form_username = $_SESSION['form']['username'];
+}
 ?>
 <html>
     <head>
@@ -19,7 +22,7 @@ session_start();
                         }
                     ?>
                     <div>
-                        <input id="username" name="username" placeholder="Email" type="text" />
+                        <input id="username" name="username" placeholder="Email" type="text" value="<?php echo $form_username;?>"/>
                     </div>
                     <div>
                         <input id="password" name="password" placeholder="Password" type="password" />

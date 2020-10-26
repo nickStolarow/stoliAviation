@@ -1,5 +1,10 @@
 <?php
-    session_start();
+session_start();
+if (isset($_SESSION['form'])) {
+    $form_firstname = $_SESSION['form']['firstname'];
+    $form_lastname = $_SESSION['form']['lastname'];
+    $form_email = $_SESSION['form']['email'];
+}
 ?>
 <html>
     <head>
@@ -19,13 +24,13 @@
                         }
                     ?>
                     <div>
-                        <input id="firstname" name="firstname" placeholder="First Name" type="text" />
+                        <input id="firstname" name="firstname" placeholder="First Name" type="text" value="<?php echo $form_firstname;?>"/>
                     </div>
                     <div>
-                        <input id="lastname" name="lastname" placeholder="Last Name" type="text" />
+                        <input id="lastname" name="lastname" placeholder="Last Name" type="text" value="<?php echo $form_lastname;?>"/>
                     </div>
                     <div>
-                        <input id="email" name="email" placeholder="Email" type="text" />
+                        <input id="email" name="email" placeholder="Email" type="text" value="<?php echo $form_email;?>"/>
                     </div>
                     <div>
                         <input id="password" name="password" placeholder="Password" type="password" />
