@@ -1,5 +1,12 @@
 <?php
 session_start();
+$button = 'Login';
+$link = 'login.php';
+if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
+	$loggedIn = $_SESSION['loggedIn'];
+	$button = 'Logout';
+	$link = 'logout.php';
+}
 ?>
 <html>
 	<head>
@@ -8,7 +15,7 @@ session_start();
 	</head>
 	<body>
 		<span id="loginButton">
-			<a id="navlinks" href="login.php">Login/My Account</a>
+			<a id="navlinks" class='loginLogout' href=<?php echo $link; ?>><?php echo $button; ?></a>
 		</span>
 		<a href="index.php">
 			<img id="logo" src="logo.jpg" />
