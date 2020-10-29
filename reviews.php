@@ -1,22 +1,14 @@
 <?php
 	$pageName = "reviews";
 	require_once "header.php";
+	session_start();
+	$con = include("config.php");
 ?>
-					<table id='reviews'>
-			<tr>
-				<th>Month</th>
-				<th>Savings</th>
-			</tr>
-			<tr>
-				<td>January</td>
-				<td>$100</td>
-			</tr>
-			<tr>
-				<td>February</td>
-				<td>$80</td>
-			</tr>
-			</table>
-		</div>
+		<form action='reviewHandler.php'>
+			<div>
+				<input class="writeReview" type="submit" value="Leave a review!" />
+			</div>
+		</form>
 	</body>
 </html>
 <?php

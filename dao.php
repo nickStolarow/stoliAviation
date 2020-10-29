@@ -56,4 +56,13 @@ class Dao {
       return false;
     }
   }
+
+  public function createReview($headline, $review) {
+    $conn = $this->getConnection();
+    $createReviewQuery = "insert into reviews(Headline, Review) values(:headline, :review)";
+    $q = $conn->prepare($createReviewQuery);
+    $q->bindParam(":headline", $headline);
+    $q->bindParam(":review", $review);
+    $q->execute(); 
+  }
 }

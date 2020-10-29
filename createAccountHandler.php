@@ -50,7 +50,7 @@ if ($errors){
     exit();
 } else {
     // Inserts valid user into users table
-    $dao->createUser($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['password']);
+    $dao->createUser($firstname, $lastname, $email, $password);
     if ($con == 'heroku'){
         header("Location: https://thawing-peak-03178.herokuapp.com/login.php");
     } else {

@@ -17,7 +17,17 @@ CREATE TABLE HoursFlown (
 CREATE TABLE Reviews (
     UserID INT,
     ReviewID INT,
-    Review VARCHAR(512),
-    ReviewDate DATETIME,
+    Headline VARCHAR(64),
+    Review VARCHAR(2048),
+    ReviewDate TIMESTAMP,
+    PRIMARY KEY (ReviewID),
     FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+CREATE TABLE Reviews (
+    ReviewID INT AUTO_INCREMENT,
+    Headline VARCHAR(64) NOT NULL,
+    Review VARCHAR(2048) NOT NULL,
+    ReviewDate TIMESTAMP,
+    PRIMARY KEY (ReviewID)
 );
