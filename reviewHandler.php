@@ -1,5 +1,6 @@
 <?php
 session_start();
+$con = include('config.php');
 
 if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
     if ($con == 'heroku') {
