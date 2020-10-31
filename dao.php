@@ -65,4 +65,9 @@ class Dao {
     $q->bindParam(":review", $review);
     $q->execute(); 
   }
+
+  public function getReviews() {
+    $conn = $this->getConnection();
+    return $conn->query('select headline, review, reviewdate from reviews');
+  }
 }
