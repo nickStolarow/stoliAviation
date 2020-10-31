@@ -1,5 +1,16 @@
 <?php
 session_start();
+$con = include('config.php');
+
+if (isset($_SESSION['loggedIn']) && !$_SESSION['loggedIn'] || !isset($_SESSION['loggedIn'])) {
+    if ($con == 'heroku') {
+        header("Location: https://thawing-peak-03178.herokuapp.com/login.php");
+    } else {
+        header("Location: http://localhost/stoliAviation/login.php");
+    }
+    exit();
+  }
+
 if (isset($_SESSION['form'])) {
     $form_headline = $_SESSION['form']['headline'];
     $form_review = $_SESSION['form']['review'];

@@ -18,8 +18,8 @@
 				$review = $rev['review'];
 				$date = $rev['reviewdate'];
 				echo "<div class='entireReview'>";
-					echo "<div class='headline' >{$headline}</div>";
-					echo "<div class='review' >{$review}</div>";
+					echo "<div class='headline'>" . htmlspecialchars($headline) . "</div>";
+					echo "<div class='review' >" . htmlspecialchars($review) . "</div>";
 					echo "<div class='reviewDate' >{$date}</div>";
 				echo "</div>";
 			}

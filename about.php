@@ -2,7 +2,7 @@
 	$pageName = "about";
 	require_once "header.php";
 ?>
-	<div>
+	<div class='aboutPage'>
 		<p id="aboutText">
 			Flying is a dream of many and one of the greatest thrills known to 
 			mankind; at Stoli Aviation we will make your flying fantasy come to 

@@ -228,3 +228,7 @@ hr {
 .reviewDate {
     float: right;
 }
+
+.aboutPage {
+    margin: 0 20;
+}
