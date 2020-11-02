@@ -22,11 +22,11 @@
 				$date = $rev['reviewdate'];
 				$reviewId = $rev['reviewid'];
 				echo "<div class='entireReview'>";
+					if ($admin){
+						echo "<div class='deleteReview'><a href='deleteReview.php?id={$reviewId}'>X</a></div>";
+					}
 					echo "<div class='headline'>" . htmlspecialchars($headline) . "</div>";
 					echo "<div class='review' >" . htmlspecialchars($review) . "</div>";
-					if ($admin){
-						echo "<div class='deleteReview'><a href='deleteReview.php?id={$reviewId}'>delete</a></div>";
-					}
 					echo "<div class='reviewDate' >{$date}</div>";
 				echo "</div>";
 			}
