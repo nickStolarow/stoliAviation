@@ -7,6 +7,9 @@ $con = include('config.php');
 $errors = false;
 $dao = new Dao();
 $_SESSION['errors'] = array();
+foreach ($_SESSION['email'] as $email){
+    $fullName = $dao->getName($email);
+}
 
 if (strlen($headline) < 1 || strlen($review) < 1) {
     $errors = true;
@@ -22,7 +25,7 @@ if ($errors) {
     }
     exit();
 } else {
-    $dao->createReview($headline, $review);
+    $dao->createReview($fullName, $headline, $review);
     if ($con == 'heroku'){
         header("Location: https://thawing-peak-03178.herokuapp.com/reviews.php");
     } else {

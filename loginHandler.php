@@ -6,12 +6,14 @@ $password = $_POST['password'];
 $_SESSION['credentials'] = array();
 $_SESSION['loggedIn'] = array();
 $_SESSION['admin'] = array();
+$_SESSION['email'] = array();
 $con = include('config.php');
 
 // Authenticate user
 $dao = new Dao();
 $validUser = $dao->userExists($username, $password);
 if ($validUser) {
+    $_SESSION['email'][] = $username;
     $_SESSION['loggedIn'][] = true;
     if ($username == 'Admin'){
         $_SESSION['admin'][] = true;

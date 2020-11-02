@@ -57,18 +57,19 @@ class Dao {
     }
   }
 
-  public function createReview($headline, $review) {
+  public function createReview($fullName, $headline, $review) {
     $conn = $this->getConnection();
-    $createReviewQuery = "insert into reviews(Headline, Review) values(:headline, :review)";
+    $createReviewQuery = "insert into reviews(fullname, headline, review) values(:fullname, :headline, :review)";
     $q = $conn->prepare($createReviewQuery);
     $q->bindParam(":headline", $headline);
     $q->bindParam(":review", $review);
+    $q->bindParam(":fullname", $fullName);
     $q->execute(); 
   }
 
   public function getReviews() {
     $conn = $this->getConnection();
-    return $conn->query('select reviewid, headline, review, reviewdate from reviews order by reviewdate desc');
+    return $conn->query('select fullname, reviewid, headline, review, reviewdate from reviews order by reviewdate desc');
   }
 
   public function deleteReview($id){

@@ -236,3 +236,8 @@ hr {
 .deleteReview {
     float: right;
 }
+
+.fullname {
+    font-size: 13px;
+    font-style: italic;
+}

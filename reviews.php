@@ -17,6 +17,7 @@
 		</form>
 		<?php
 			foreach ($reviews as $rev) {
+				$fullName = $rev['fullname'];
 				$headline = $rev['headline'];
 				$review = $rev['review'];
 				$date = $rev['reviewdate'];
@@ -25,8 +26,9 @@
 					if ($admin){
 						echo "<div class='deleteReview'><a href='deleteReview.php?id={$reviewId}'>X</a></div>";
 					}
+					echo "<div class='fullname'>" . 'by ' . htmlspecialchars($fullName) . "</div>";
 					echo "<div class='headline'>" . htmlspecialchars($headline) . "</div>";
-					echo "<div class='review' >" . htmlspecialchars($review) . "</div>";
+					echo "<div class='review'>" . htmlspecialchars($review) . "</div>";
 					echo "<div class='reviewDate' >{$date}</div>";
 				echo "</div>";
 			}
