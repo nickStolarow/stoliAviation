@@ -68,6 +68,27 @@ class Dao {
 
   public function getReviews() {
     $conn = $this->getConnection();
-    return $conn->query('select headline, review, reviewdate from reviews');
+    return $conn->query('select reviewid, headline, review, reviewdate from reviews order by reviewdate desc');
+  }
+
+  public function deleteReview($id){
+    $conn = $this->getConnection();
+    $deleteReviewQuery = "delete from reviews where ReviewID = :id";
+    $q = $conn->prepare($deleteReviewQuery);
+    $q->bindParam(":id", $id);
+    $q->execute();
+  }
+
+  public function getName($email) {
+    $conn = $this->getConnection();
+    $getNameQuery = "select firstname, lastname from users where email = :email";
+    $q = $conn->prepare($getNameQuery);
+    $q->bindParam(":email", $email);
+    $q->execute();
+
+    foreach ($q as $name) {
+      $fullName = $name['firstname'] . ' ' . $name['lastname'];
+    }
+    return $fullName;
   }
 }

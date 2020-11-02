@@ -232,3 +232,8 @@ hr {
 .aboutPage {
     margin: 0 20;
 }
+
+.deleteReview {
+    float: right;
+    margin-left: 5px;
+}

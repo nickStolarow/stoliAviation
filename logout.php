@@ -2,6 +2,8 @@
 session_start();
 session_destroy();
 unset($_SESSION['loggedIn']);
+unset($_SESSION['admin']);
+unset($_SESSION['credentials']);
 ?>
 <html>
     <head>

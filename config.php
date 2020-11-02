@@ -1,4 +1,4 @@
 <?php
-// return 'local';
-return 'heroku';
+return 'local';
+// return 'heroku';
 ?>
