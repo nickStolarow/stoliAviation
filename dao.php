@@ -31,15 +31,16 @@ class Dao {
     }
   }
 
-  public function createUser($firstname, $lastname, $email, $password) {
+  public function createUser($firstname, $lastname, $email, $password, $salt) {
     $conn = $this->getConnection();
-    $createUserQuery = "insert into users(FirstName, LastName, Email, Password) values(
-      :firstname, :lastname, :email, :password)";
+    $createUserQuery = "insert into users(FirstName, LastName, Email, Password, Salt) values(
+      :firstname, :lastname, :email, :password, :salt)";
     $q = $conn->prepare($createUserQuery);
     $q->bindParam(":firstname", $firstname);
     $q->bindParam(":lastname", $lastname);
     $q->bindParam(":email", $email);
     $q->bindParam(":password", $password);
+    $q->bindParam(":salt", $salt);
     $q->execute(); 
   }
 
@@ -91,5 +92,18 @@ class Dao {
       $fullName = $name['firstname'] . ' ' . $name['lastname'];
     }
     return $fullName;
+  }
+
+  public function getSalt($email) {
+    $conn = $this->getConnection();
+    $getSaltQuery = "select salt from users where email = :email";
+    $q = $conn->prepare($getSaltQuery);
+    $q->bindParam(":email", $email);
+    $q->execute();
+
+    foreach ($q as $salt) {
+      $ret = $salt['salt'];
+    }
+    return $ret;
   }
 }

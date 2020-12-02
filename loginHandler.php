@@ -11,6 +11,8 @@ $con = include('config.php');
 
 // Authenticate user
 $dao = new Dao();
+$salt = $dao->getSalt($username);
+$password = hash("sha256", $salt . $password);
 $validUser = $dao->userExists($username, $password);
 if ($validUser) {
     $_SESSION['email'][] = $username;
