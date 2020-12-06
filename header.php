@@ -12,6 +12,11 @@ if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true){
 	<head>
 		<link rel="stylesheet" type="text/css" href="stoliAviation.css" />
 		<link rel="icon" type="image/png" href="favicon.ico"/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+		<script src="slide.js"></script>
+		<script src="calender.js"></script>
 	</head>
 	<body>
 		<span id="loginButton">
